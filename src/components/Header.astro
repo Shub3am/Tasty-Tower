@@ -1,4 +1,5 @@
 ---
+let isOpen = false;
 ---
 
 <div class="header">
@@ -20,8 +21,8 @@
     </nav>
   </div>
   <div class="mobileMenu">
-    <button><img src="youtube.png" width="20" /></button>
-    <nav>
+    <button><img src="nav.png" width="20" /></button>
+    <nav class:list={["mobileNav", { isOpen: isOpen }]}>
       <ul>
         <li>Home</li>
         <li>Blog</li>
@@ -75,6 +76,15 @@
     }
     .mobileMenu {
       display: block;
+    }
+    .mobileNav {
+      position: fixed;
+      right: 0;
+      height: 100%;
+      top: 0;
+      width: 10em;
+      background: black;
+      color: white;
     }
   }
 </style>
