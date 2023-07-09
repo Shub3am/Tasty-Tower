@@ -1,6 +1,14 @@
 ---
 import mongoose from "mongoose";
-console.log(mongoose);
+const Posts = mongoose.model("blog", {
+  post: String,
+  Author: String,
+});
+mongoose.connect("mongodb://localhost:27017/tasty_tower");
+
+mongoose.connection.on("open", () => console.log("Connected"));
+
+let s = await Posts.find({});
 ---
 
-<h1>{mongoose.connect}</h1>
+<h1>{s}</h1>
