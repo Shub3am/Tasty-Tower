@@ -80,6 +80,16 @@
     margin: 0 10px;
     font-size: 20px;
   }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
   @media all and (max-width: 900px) {
     .social-links,
     .menu {
@@ -104,6 +114,7 @@
       width: 8em;
       background: black;
       color: white;
+      animation: fadeIn 0.25s linear;
     }
     .isOpen {
       display: block;
