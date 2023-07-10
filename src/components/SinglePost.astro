@@ -1,0 +1,14 @@
+---
+const { post } = Astro.props;
+---
+
+<div>
+  <div><img src={post.image} /></div>
+  <div>
+    <h3>{post.title}</h3>
+    <p>{post.post}</p>
+  </div>
+  <h4>
+    By: {post.author}
+  </h4>
+</div>
