@@ -7,8 +7,25 @@ mongoose.connect("mongodb://localhost:27017/tasty_tower");
 mongoose.connection.on("open", () => console.log("Connected"));
 
 let allPosts = await Posts.find({});
+console.log(allPosts[0].author);
 ---
 
-<div>
-  {allPosts.map((post) => <SinglePost post={post.post} author={post.author} />)}
+<div class="main">
+  <div class="allPosts">
+    {allPosts.map((post) => <SinglePost postData={post} />)}
+  </div>
+  <div class="sidebar">SideBar</div>
 </div>
+
+<style>
+  .main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .allPosts {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+</style>

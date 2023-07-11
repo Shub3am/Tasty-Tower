@@ -1,14 +1,31 @@
 ---
-const { post } = Astro.props;
+const { postData } = Astro.props;
 ---
 
-<div>
-  <div><img src={post.image} /></div>
+<div class="singlePost">
+  {
+    postData?.image ? (
+      <div>
+        <img src={post.image} />
+      </div>
+    ) : (
+      ""
+    )
+  }
   <div>
-    <h3>{post.title}</h3>
-    <p>{post.post}</p>
+    <h3>{postData.title}</h3>
+    <p>{postData.post}</p>
   </div>
   <h4>
-    By: {post.author}
+    By: {postData.author}
   </h4>
 </div>
+
+<style>
+  .singlePost {
+    width: 80%;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid black;
+  }
+</style>
