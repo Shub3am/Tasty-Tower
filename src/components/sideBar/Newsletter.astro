@@ -1,0 +1,41 @@
+---
+---
+
+<div class="newsletter">
+  <form method="POST">
+    <label for="newsletter_Email">Subscribe to Amazing Emails Now!</label><input
+      id="newsletter_Email"
+      type="email"
+      placeholder="abra@kadabra.com"
+      required
+    />
+    <input type="submit" />
+  </form>
+</div>
+
+<style>
+  .newsletter {
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+      rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+      rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+  .newsletter form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* border: 1px solid grey; */
+    padding: 1em;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .newsletter form label {
+    font-size: 1.25em;
+    margin: 0.5em;
+  }
+  .newsletter form input {
+    padding: 1em;
+    font-size: 1em;
+    margin: 0.5em 0 0 0;
+    border-radius: 10px;
+  }
+</style>
