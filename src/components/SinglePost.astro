@@ -5,18 +5,18 @@ const { postData } = Astro.props;
 <div class="singlePost">
   {
     postData?.image ? (
-      <div>
+      <div class="postImage">
         <img src={post.image} />
       </div>
     ) : (
       ""
     )
   }
-  <div>
+  <div class="postBody">
     <h3>{postData.title}</h3>
     <p>{postData.post}</p>
   </div>
-  <h4>
+  <h4 class="postMeta">
     By: {postData.author}
   </h4>
 </div>
@@ -26,6 +26,20 @@ const { postData } = Astro.props;
     width: 80%;
     margin: 1em;
     padding: 1em;
-    border: 1px solid black;
+
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
+  /* Post Body */
+  /* Title */
+  .postBody h3 {
+    font-size: 1.75em;
+    margin: 0.5em 0;
+  }
+  /* Body */
+  .postBody p {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+  }
+  /* Post Body */
 </style>
