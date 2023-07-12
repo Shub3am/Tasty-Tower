@@ -1,6 +1,7 @@
 ---
 import mongoose from "mongoose";
 import Posts from "../models/Posts";
+import SideBar from "./sideBar.astro";
 import SinglePost from "./SinglePost.astro";
 mongoose.connect("mongodb://localhost:27017/tasty_tower");
 
@@ -14,7 +15,9 @@ console.log(allPosts[0].author);
   <div class="allPosts">
     {allPosts.map((post) => <SinglePost postData={post} />)}
   </div>
-  <div class="sidebar">SideBar</div>
+  <div class="sidebar">
+    <SideBar />
+  </div>
 </div>
 
 <style>

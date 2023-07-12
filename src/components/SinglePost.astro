@@ -1,5 +1,6 @@
 ---
 const { postData } = Astro.props;
+const post = postData.post.slice(0, 150) + "...";
 ---
 
 <div class="singlePost">
@@ -14,7 +15,7 @@ const { postData } = Astro.props;
   }
   <div class="postBody">
     <h3>{postData.title}</h3>
-    <p>{postData.post}</p>
+    <p>{post}</p>
   </div>
   <h4 class="postMeta">
     By: {postData.author}
@@ -25,10 +26,11 @@ const { postData } = Astro.props;
   .singlePost {
     width: 80%;
     margin: 1em;
-    padding: 1em;
+    padding: 1.25em;
 
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 12px;
   }
   /* Post Body */
   /* Title */
