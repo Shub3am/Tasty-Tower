@@ -14,7 +14,7 @@ const post = postData.post.slice(0, 150) + "...";
         <img
           src="https://source.unsplash.com/random"
           width="100%"
-          height="100%"
+          height="700px"
         />
       </div>
     )
@@ -26,6 +26,9 @@ const post = postData.post.slice(0, 150) + "...";
   <h4 class="postMeta">
     By: {postData.author}
   </h4>
+  <div class="readmore">
+    <h3><a href=`/${postData.slug}`>Read More</a></h3>
+  </div>
 </div>
 
 <style>
@@ -40,7 +43,8 @@ const post = postData.post.slice(0, 150) + "...";
   /* Post Body */
   /* Title */
   .postBody,
-  .postMeta {
+  .postMeta,
+  .readmore {
     padding: 1.25em;
   }
   .postBody h3 {
@@ -53,4 +57,11 @@ const post = postData.post.slice(0, 150) + "...";
     margin-bottom: 1em;
   }
   /* Post Body */
+  /* Post Link */
+  .readmore {
+    color: black;
+  }
+  .readmore a {
+    text-decoration: wavy underline;
+  }
 </style>

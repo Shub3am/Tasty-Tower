@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
   image: String,
+  slug: { type: String, unique: true, required: true },
   post: { type: String, required: true },
   tags: [String],
   author: { type: String, required: true },
@@ -27,6 +28,7 @@ async function getData() {
     console.log(post);
     return {
       id: post.id,
+      slug: post.title.slice(0, 10).replaceAll(" ", "-"),
       title: post.title,
       post: post.body,
       author: "Shubham",
