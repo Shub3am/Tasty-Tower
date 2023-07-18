@@ -1,10 +1,10 @@
 ---
 ---
 
-<div class="About-Container">
-  <div><img /></div>
+<div class="About-Container box">
+  <div class="About-Photo"><img src="logo.png" width="300" height="200" /></div>
   <h1>Author</h1>
-  <div>
+  <div class="About-Content">
     <p>Student Council</p>
     <p>We are Student Council Members of Sunbeam School Lahartara</p>
   </div>
@@ -12,10 +12,30 @@
 
 <style>
   .About-Container {
-    borer
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid grey;
+    padding: 1em;
+    margin: 2em 0;
+    text-align: center;
+  }
+  .About-Photo {
+    /* border: 1px solid black; */
+  }
+  .About-Photo img {
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 0;
+    width: 300px;
+    height: 200px;
+  }
+  .About-Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 1em;
   }
 </style>
