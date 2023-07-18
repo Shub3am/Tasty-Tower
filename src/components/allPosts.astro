@@ -7,8 +7,7 @@ mongoose.connect("mongodb://localhost:27017/tasty_tower");
 
 mongoose.connection.on("open", () => console.log("Connected"));
 
-let allPosts = await Posts.find({});
-console.log(allPosts[0].author);
+let allPosts = await Posts.find({}).limit(8);
 ---
 
 <div class="main">
