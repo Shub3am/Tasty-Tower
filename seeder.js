@@ -10,14 +10,14 @@ const postSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
   views: { type: Number, default: 0, min: 0 },
 });
-const Posts = mongoose.model("blogs", postSchema);
 
 async function seedData() {
-  mongoose.connect("mongodb://localhost:27017/tasty_tower");
+  mongoose.connect("mongodb://127.0.0.1:27017/tasty_tower");
   mongoose.connection.on("open", () => console.log("Connected"));
+  const Posts = mongoose.model("blogs", postSchema);
   let data = await getData();
   const result = await Posts.insertMany(data);
-  console.log(result);
+  console.log("Done");
 }
 
 async function getData() {
@@ -25,7 +25,6 @@ async function getData() {
     res.json()
   );
   let final = data.posts.map((post) => {
-    console.log(post);
     return {
       id: post.id,
       slug: post.title.slice(0, 10).replaceAll(" ", "-"),
@@ -35,6 +34,7 @@ async function getData() {
       tags: post.tags,
     };
   });
+
   return final;
 }
 
