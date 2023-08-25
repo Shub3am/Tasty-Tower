@@ -10,29 +10,31 @@ mongoose.connection.on("open", () => console.log("Connected"));
 let allPosts = await Posts.find({}).limit(8);
 ---
 
-<div class="main">
-  <div class="allPosts">
-    {allPosts.map((post) => <SinglePost postData={post} />)}
+<div class="main container">
+  <div class="row">
+    <div class="allPosts col-10">
+      {allPosts.map((post) => <SinglePost postData={post} />)}
+    </div>
+    <div class="sidebar col-2">
+      <SideBar />
+    </div>
   </div>
-  <div class="sidebar">
-    <SideBar />
-  </div>
-</div>
 
-<style>
-  .main {
+  <style>
+    /* .main {
     display: grid;
     grid-template-columns: 2fr 1fr;
-  }
-  .allPosts,
-  .sidebar {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .allPosts {
-    justify-content: end;
-  }
-  .sidebar {
-    justify-content: start;
-  }
-</style>
+  } */
+    .allPosts,
+    .sidebar {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .allPosts {
+      justify-content: end;
+    }
+    .sidebar {
+      justify-content: start;
+    }
+  </style>
+</div>
