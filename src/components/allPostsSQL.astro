@@ -7,8 +7,9 @@ mongoose.connect("mongodb://localhost:27017/tasty_tower");
 mongoose.connection.on("open", () => console.log("Connected"));
 
 let allPosts = await Posts.find({}).sort({ $natural: -1 }).limit(3);
-// console.log(allPosts);
-import SinglePost from "./SinglePostSQL.astro";
+let trendingPosts = await Posts.find({}).sort({ views: -1 }).limit(2);
+import Banner_Main from "./Home/Banner/Slider.astro";
+import Banner_Right_Content from "./Home/Banner/SideBanner.astro";
 ---
 
 <main>
@@ -20,47 +21,11 @@ import SinglePost from "./SinglePostSQL.astro";
           <div class="col-lg-8">
             <!-- Trending Top -->
             <div class="slider-active">
-              {allPosts.map((post) => <SinglePost postData={post} />)}
+              {allPosts.map((post) => <Banner_Main postData={post} />)}
             </div>
           </div>
           <!-- Right content -->
-          <div class="col-lg-4">
-            <!-- Trending Top -->
-            <div class="row">
-              <div class="col-lg-12 col-md-6 col-sm-6">
-                <div class="trending-top mb-30">
-                  <div class="trend-top-img">
-                    <img src="assets/img/trending/trending_top3.jpg" alt="" />
-                    <div class="trend-top-cap trend-top-cap2">
-                      <span class="bgb">FASHION</span>
-                      <h2>
-                        <a href="latest_news.html"
-                          >Secretart for Economic Air plane that looks like</a
-                        >
-                      </h2>
-                      <p>by Alice cloe - Jun 19, 2020</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12 col-md-6 col-sm-6">
-                <div class="trending-top mb-30">
-                  <div class="trend-top-img">
-                    <img src="assets/img/trending/trending_top4.jpg" alt="" />
-                    <div class="trend-top-cap trend-top-cap2">
-                      <span class="bgg">TECH</span>
-                      <h2>
-                        <a href="latest_news.html"
-                          >Secretart for Economic Air plane that looks like</a
-                        >
-                      </h2>
-                      <p>by Alice cloe - Jun 19, 2020</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Banner_Right_Content postData={trendingPosts} />
         </div>
       </div>
     </div>
