@@ -4,7 +4,7 @@ import Posts from "../models/Posts";
 
 mongoose.connect("mongodb://localhost:27017/tasty_tower");
 
-mongoose.connection.on("open", () => console.log("Connected"));
+mongoose.connection.on("open", () => console.log("Database Connected!"));
 
 let allPosts = await Posts.find({}).sort({ $natural: -1 }).limit(3);
 let trendingPosts = await Posts.find({}).sort({ views: -1 }).limit(2);

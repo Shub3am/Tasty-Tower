@@ -17,7 +17,7 @@ const { postData } = Astro.props;
         >
         <h2>
           <a
-            href="latest_news.html"
+            href=`/blog/${postData.slug}`
             data-animation="fadeInUp"
             data-delay=".4s"
             data-duration="1000ms">{postData.title}</a

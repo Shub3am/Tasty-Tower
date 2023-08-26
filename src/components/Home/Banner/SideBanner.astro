@@ -14,7 +14,7 @@ let second_Post = postData[1];
           <div class="trend-top-cap trend-top-cap2">
             <span class="bgb">{first_Post.tags[0]}</span>
             <h2>
-              <a href="latest_news.html">{first_Post.title}</a>
+              <a href=`/blog/${first_Post.slug}`>{first_Post.title}</a>
             </h2>
             <p>by {first_Post.author} - {first_Post.date}</p>
           </div>
@@ -28,7 +28,7 @@ let second_Post = postData[1];
           <div class="trend-top-cap trend-top-cap2">
             <span class="bgg">{second_Post.tags[0]}</span>
             <h2>
-              <a href="latest_news.html">{second_Post.title}</a>
+              <a href=`/blog/${second_Post.slug}`>{second_Post.title}</a>
             </h2>
             <p>by {second_Post.author} - {second_Post.date}</p>
           </div>
