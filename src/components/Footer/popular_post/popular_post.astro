@@ -1,0 +1,17 @@
+---
+import mongoose from "mongoose";
+import Posts from "../../../models/Posts";
+let popular_posts = await Posts.find({}).sort("-views").limit(3);
+import SinglePost from "./single_post.astro";
+---
+
+<div class="col-xl-4 col-lg-4 col-md-5 col-sm-7">
+  <div class="single-footer-caption mb-50">
+    <div class="footer-tittle">
+      <h4>Popular post</h4>
+    </div>
+    <!-- Popular post -->{
+      popular_posts.map((post) => <SinglePost postData={post} />)
+    }<!-- Popular post -->
+  </div>
+</div>
