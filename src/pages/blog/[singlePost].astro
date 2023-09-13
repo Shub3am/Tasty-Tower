@@ -9,24 +9,12 @@ interface singlePost {
   date: Date;
 }
 
-console.log(Astro.params);
-import mongoose from "mongoose";
 import Layout from "../../layouts/Layout.astro";
 import Posts from "../../models/Posts";
+let singlePost = await Posts.findOne({slug: Astro.params.singlePost}).then(post=> post)
 
 const { resource, id } = Astro.params;
-export async function getStaticPaths() {
-  mongoose.connect("mongodb://localhost:27017/tasty_tower");
 
-  mongoose.connection.on("open", () => console.log("Requesting Single Post!"));
-  let allPosts = await Posts.find({});
-  let StaticPaths = allPosts.map((singlePost: singlePost) => {
-    return { params: { singlePost: singlePost.slug }, props: { singlePost } }; //here singlePost is the dynamic file name [singlePost]
-  });
-  return StaticPaths;
-}
-
-let singlePost: singlePost = Astro.props.singlePost;
 
 let tags: String = "";
 singlePost.tags.forEach((tag: String) => {
@@ -36,6 +24,7 @@ singlePost.tags.forEach((tag: String) => {
     tags = tag;
   }
 });
+
 ---
 
 <Layout>

@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 mongoose.connect("mongodb://localhost:27017/tasty_tower");
 mongoose.connection.on("open", () => console.log("Database Connected!"));
 
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
 export interface Props {
