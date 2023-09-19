@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 import "dotenv/config"
 mongoose.connect(process.env.MONGO);
-mongoose.connection.on("open", () => console.log("Database Connected!"));
+mongoose.connection.on("connected", () => console.log("Database Connected!"));
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
 export interface Props {
