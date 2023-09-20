@@ -1,0 +1,33 @@
+---
+const { postData } = Astro.props;
+---
+
+<!-- Single -->
+<div class="single-slider">
+  <div class="trending-top mb-30">
+    <div class="trend-top-img">
+      <img src="https://source.unsplash.com/random" height="600px" alt="" />
+      <div class="trend-top-cap">
+        <span
+          class="bgr"
+          data-animation="fadeInUp"
+          data-delay=".2s"
+          data-duration="1000ms"
+          >{postData.tags[0] ? postData.tags[0] : "Student"}</span
+        >
+        <h2>
+          <a
+            href=`/blog/${postData.slug}`
+            data-animation="fadeInUp"
+            data-delay=".4s"
+            data-duration="1000ms">{postData.title}</a
+          >
+        </h2>
+        <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">
+          by {postData.author}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Single -->

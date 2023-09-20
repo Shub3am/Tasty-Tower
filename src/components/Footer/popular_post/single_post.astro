@@ -1,0 +1,17 @@
+---
+let { postData } = Astro.props;
+---
+
+<div class="whats-right-single mb-20">
+  <div class="whats-right-img">
+    <img src="/assets/img/gallery/footer_post1.png" alt="" />
+  </div>
+  <div class="whats-right-cap">
+    <h4>
+      <a href=`/blog/${postData.slug}`>{postData.title}</a>
+    </h4>
+    <p>
+      {postData.author} | {postData.date}
+    </p>
+  </div>
+</div>
