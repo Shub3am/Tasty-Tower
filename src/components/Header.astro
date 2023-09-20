@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import Preloader_Image from "../images/header/logo.png";
 ---
 
 <header>
@@ -8,7 +10,7 @@
       <div class="preloader-inner position-relative">
         <div class="preloader-circle"></div>
         <div class="preloader-img pere-text">
-          <img src="/logo.png" alt="" />
+          <Image src={Preloader_Image} alt="Sunbeam School Lahartara's Logo" id="preloader" />
         </div>
       </div>
     </div>
@@ -110,3 +112,11 @@
   </div>
   <!-- Header End -->
 </header>
+
+
+<style>
+  #preloader {
+    width: 100%;
+    height: 100%;
+  }
+</style>
