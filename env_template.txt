@@ -1,5 +1,4 @@
 TEMPLATE
-
 MONGODB = "URL"
-DBUSER = "USER"
-DBPASS = "PASS"
+
+Here goes the URL Schema of MongoDB
