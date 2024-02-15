@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { v4 as uuidv4 } from 'uuid';
 
 const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
@@ -25,8 +26,8 @@ async function getData() {
     res.json()
   );
   let final = data.posts.map((post) => {
+    
     return {
-      id: post.id,
       slug: post.title.slice(0, 10).replaceAll(" ", "-"),
       title: post.title,
       post: post.body,
